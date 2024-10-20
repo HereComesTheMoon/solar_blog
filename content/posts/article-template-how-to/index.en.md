@@ -6,7 +6,6 @@ lang: "en"
 authors: ["Marie Verdeil" ]
 categories: [""]
 tags: [""]
-unlisted: true
 draft: false
 featured_image: "image.png"
 ---
