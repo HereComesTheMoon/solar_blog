@@ -37,7 +37,11 @@ block = true
     lineNumbersInTable = true
     noClasses = true
     noHl = false
-    style = 'onesenterprise'
+    style = 'pygments'
+    # style = 'colorful'
+    # style = 'emacs'
+    # style = 'monokailight'
+    # style = 'rainbow_dash'
     tabWidth = 4
 
 
