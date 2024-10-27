@@ -1,7 +1,7 @@
 ---
 title: "About"
 date: ""
-summary: "Empty summary"
+summary: "This is a blog."
 slug: "about"
 lang: "en"
 authors: [""]
