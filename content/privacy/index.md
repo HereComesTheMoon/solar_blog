@@ -3,7 +3,6 @@ title: "Privacy"
 date: ""
 summary: "This website does not use cookies, advertising services, or tracking codes. We collect server logs to understand traffic on the server. This information is viewed only by us and is not used to make user profiles."
 slug: "privacy"
-lang: "en"
 categories: [""]
 tags: []
 

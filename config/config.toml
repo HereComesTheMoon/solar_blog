@@ -6,7 +6,6 @@ buildFuture = true
 buildDrafts = false
 paginate = 12
 
-DefaultContentLanguage = "en"
 pluralizelisttitles = "false"
 
 refLinksErrorLevel = "WARNING"
