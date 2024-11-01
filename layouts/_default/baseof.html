@@ -8,10 +8,11 @@
 	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
 	{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
 
-	<link rel="icon" href="{{ .Site.BaseURL }}icons/sun.svg">
+	<link rel="icon" href="{{ relURL "icons/sun.svg" }}">
 
-	{{ $style := resources.Get "/css/style.scss" | resources.ToCSS }}
-	<link rel="stylesheet" href="{{ $style.Permalink }}">
+	{{ with resources.Get "css/style.scss" | toCSS }}
+		<link rel="stylesheet" href="{{ .RelPermalink }}">
+	{{ end }}
 
 	{{- partial "feeds" . -}}
 	{{- partial "opengraph" . -}}
@@ -24,6 +25,6 @@
 	{{ block "main" . }}{{ end }}
 	{{ partial "footer" . }}
 
-	<script src="{{ .Site.BaseURL }}js/script.js"></script>
+	<script src="{{ relURL "js/script.js" }}"></script>
 </body>
 </html>
