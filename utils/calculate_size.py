@@ -133,7 +133,9 @@ for root, dirs, files in os.walk(os.path.abspath(content_dir), topdown=True):
                 media, soup = get_media(os.path.join(root, fname))
 
                 for m in media:
-                    file_name = m.replace(base_url, '')
+                    file_name = m
+                    # This here breaks discovery of the css sheet and the icon
+                    # file_name = m.replace(base_url, '')
 
                     # current problematic with pagebundles is images are in the same folder as html file
                     # but html file might link to images in other page bundles so we need to determine
@@ -160,7 +162,7 @@ for root, dirs, files in os.walk(os.path.abspath(content_dir), topdown=True):
                         logging.debug("Found {} {}".format(m, get_printable_size(item_size)))
                     else:
                         # if the file path can't be found it might actually not be there at all..
-                        logging.debug("❌ {} not found!".format(m))
+                        logging.info("❌ {} not found!".format(file_name))
 
 
                 current_file = os.path.join(root, fname)
