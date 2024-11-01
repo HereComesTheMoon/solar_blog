@@ -7,8 +7,6 @@ buildFuture = true
 buildDrafts = false
 paginate = 12
 
-defaultContentLanguage = 'en'
-
 pluralizelisttitles = 'false'
 
 refLinksErrorLevel = 'WARNING'
@@ -67,11 +65,6 @@ enableInlineShortcodes = true
     name = 'Archive'
     url = '/archives/'
     weight = 2
-
-[languages]
-  [languages.en]
-    languageName = 'English'
-    weight = 1
 
 [taxonomies]
   author = 'authors'
