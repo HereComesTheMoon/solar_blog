@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.3
+hitherdither @ git+https://www.github.com/hbldh/hitherdither@0f3bbc44595aea2a20c4b96d8f536b05ac34e2a1
+numpy==2.1.2
+pillow==11.0.0
+soupsieve==2.6

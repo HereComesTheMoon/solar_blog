@@ -12,7 +12,7 @@ baseURL="/" #the URL of the website e.g. https://solar.lowtechmagazine.com/
 outputDir="./public/" # the directory where you export the site to.
 
 # echo "Dithering new images"
-# /usr/bin/python3 utils/dither_images.py -d ./content/ --colorize
+python3 utils/dither_images.py -d ./content/ --colorize
 
 echo "Generating site"
 hugo -b $baseURL --destination $outputDir --buildDrafts
@@ -22,5 +22,5 @@ echo "Calculating page sizes"
 python3 utils/calculate_size.py --directory $outputDir --baseURL $baseURL # --verbose
 
 # echo "Removing original media from" $outputDir
-# /usr/bin/python3 utils/clean_output.py --directory $outputDir
+python3 utils/clean_output.py --directory $outputDir
 
