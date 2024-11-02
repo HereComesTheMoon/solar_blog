@@ -1,6 +1,6 @@
 // console.log('script loaded');
 
-let url = "/api/stats.json";  
+let url = "/api/stats.json";
 let data;
 let solar_stats = [];
 let battery_stats = [];
@@ -9,16 +9,16 @@ let general_stats = [];
 loadJSON();
 
 async function loadJSON() {
-  const response = await fetch(url);
-  const data = await response.json();
-  setupBatteryMeter(data);
-  populateDashboard(data);
-  populateForecast(data);
+  // const response = await fetch(url);
+  // const data = await response.json();
+  // setupBatteryMeter(data);
+  // populateDashboard(data);
+  // populateForecast(data);
 
-  if (window.location.href.indexOf('/power/') > -1) {
-      //load general stats on power page
-      populateData(data);
-  }  
+  // if (window.location.href.indexOf('/power/') > -1) {
+  //     //load general stats on power page
+  //     populateData(data);
+  // }
 }
 
 
@@ -76,7 +76,7 @@ function populateForecast(data) {
     let forecast = "";
 
     for (let i = 0; i < weather_data.length; i++) {
-        
+
         let icon_name = weather_data[i]
         let text = data[icon_name].replace(/-/g, " ");
         let weather_icon;
@@ -116,12 +116,12 @@ function populateDashboard(data) {
     document.getElementById('stats').innerHTML = pushData(footer_data).join("");
 }
 
-// language menu toggle
-const langmenu = document.getElementById('lang-menu');
-langmenu.addEventListener('click', function() {
-    console.log('togglelanguages');
-    document.getElementById('languages').classList.toggle("lang-expanded");
-});
+// // language menu toggle
+// const langmenu = document.getElementById('lang-menu');
+// langmenu.addEventListener('click', function() {
+//     console.log('togglelanguages');
+//     document.getElementById('languages').classList.toggle("lang-expanded");
+// });
 
 //mobile menu toggle
 const mobilemenu = document.getElementById('m-btn');
@@ -141,17 +141,17 @@ if ( comments.length > 0 ){
 const dither_icons = document.querySelectorAll('.dither-toggle');
 dither_icons.forEach(icon => {
 	icon.addEventListener('click', function() {
-	    let figure = icon.closest('.figure-controls').previousElementSibling;
+	    let figure = icon.closest('.figure-controls').parentNode;
 	    let img = figure.querySelector('img');
 
-	    if( figure.getAttribute('data-imgstate') == "dither"){
-	    	figure.setAttribute('data-imgstate', 'undither');	    	
+	    if(figure.getAttribute('data-imgstate') == "dither"){
+	    	figure.setAttribute('data-imgstate', 'undither');
 	    	let original = img.getAttribute('data-original');
 	    	img.src = original;
-	    }else{
+	    } else {
 	    	figure.setAttribute('data-imgstate', 'dither');
-	    	let dither= img.getAttribute('data-dither');
+	    	let dither = img.getAttribute('data-dither');
 	    	img.src = dither;
-	    }    
+	    }
 	});
 });
