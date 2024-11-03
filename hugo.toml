@@ -18,6 +18,8 @@ rssLimit = 3
 
 enableInlineShortcodes = true
 
+enableGitInfo = true
+
 [markup]
   [markup.goldmark.renderer]
     unsafe = true

@@ -14,6 +14,18 @@
         </li>
         <li>
             Any opinions expressed on this site are my own.
+        </li>
+        <li>
+            {{ if .IsHome }}
+                Site last built on: <br> {{ time.Now.UTC.Format "02 Jan 2006, 15:04 MST" }}
+            {{ else }}
+                {{ with .GitInfo }}
+                    {{ .AuthorDate.UTC.Format "02 Jan 2006, 15:04 MST" }} <br>
+                    {{ .AbbreviatedHash }} <br>
+                    {{ .Subject }}
+                {{ end }}
+            {{ end }}
+        </li>
     </ul>
     <div class="dashboard">
         <!-- <ul class="grid"> -->
