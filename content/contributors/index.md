@@ -1,7 +1,7 @@
 ---
 title: Contributors
 slug: contributors
-summary: "Authors and translators for LOW←TECH MAGAZINE"
+summary: "Authors for MOND←TECH MAGAZINE"
 layout: contributors
 ---
 

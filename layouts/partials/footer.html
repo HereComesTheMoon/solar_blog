@@ -1,33 +1,35 @@
 <footer class="site-footer">
     <div id=page-size>{{ i18n "pagesize" | default "Page Size"}}: <span id="size-value"> $PLACEHOLDER</span></div>
     <div id=back-to-top><a id="" href="#top" title="Back to top"> ↑ </a></div>
-    <ul class="grid">
-        <li>
-        <h2>
-            <a href="{{ relURL "/" }}">{{ .Site.Title }}</a>
-        </h2>
-        </li>
-        <li>
-            <p>
-                &copy; {{ .Site.Params.Author }} <br> {{ .Site.Params.SanitizedMail }}
-            </p>
-        </li>
-        <li>
-            Any opinions expressed on this site are my own.
-        </li>
-        <li>
-            {{ if .IsHome }}
-                Site last built on: <br> {{ time.Now.UTC.Format "02 Jan 2006, 15:04 MST" }}
-            {{ else }}
-                {{ with .GitInfo }}
-                    {{ .AuthorDate.UTC.Format "02 Jan 2006, 15:04 MST" }} <br>
-                    {{ .AbbreviatedHash }} <br>
-                    {{ .Subject }}
-                {{ end }}
-            {{ end }}
-        </li>
-    </ul>
     <div class="dashboard">
+        <ul class="grid">
+            <li>
+            <h2>
+                <a href="{{ relURL "/" }}">{{ .Site.Title }}</a>
+            </h2>
+            </li>
+            <li>
+                <p>
+                    &copy; {{ .Site.Params.Author }} <br> {{ .Site.Params.SanitizedMail }}
+                </p>
+            </li>
+            <li>
+                Any opinions expressed on this site are my own.
+            </li>
+            <li>
+                {{ if .IsHome }}
+                    Site last built on: <br> {{ time.Now.UTC.Format "02 Jan 2006, 15:04 MST" }}
+                {{ else }}
+                    {{ with .GitInfo }}
+                        {{ .AuthorDate.UTC.Format "02 Jan 2006, 15:04 MST" }} <br>
+                        {{ .AbbreviatedHash }} <br>
+                        {{ .Subject }}
+                    {{ end }}
+                {{ end }}
+            </li>
+        </ul>
+    </div>
+    <!-- <div class="dashboard"> -->
         <!-- <ul class="grid"> -->
             <!-- <li> -->
                 <!-- <h3>Server Stats</h3> -->
@@ -62,5 +64,5 @@
 
             <!-- </li> -->
         <!-- </ul> -->
-    </div>
+    <!-- </div> -->
 </footer>
