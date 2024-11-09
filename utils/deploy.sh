@@ -5,7 +5,7 @@ cd "$(dirname "$0")"
 # Jump to main hugo directory
 cd ..
 
-baseURL="https://www.herecomesthemoon.net/" #the URL of the website e.g. https://solar.lowtechmagazine.com/
+baseURL="" #the URL of the website e.g. https://solar.lowtechmagazine.com/
 outputDir="./public/" # the directory where you export the site to.
 
 echo "Dithering new images"

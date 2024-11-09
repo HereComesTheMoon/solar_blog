@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = '/' # Your website, eg. https://solar.lowtechmagazine.com/
 languageCode = 'en-us'
 title = 'WEBSITE TITLE'
 
