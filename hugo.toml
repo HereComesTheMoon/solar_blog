@@ -1,7 +1,6 @@
-# baseURL = '/'
-baseURL = 'https://www.herecomesthemoon.net'
+baseURL = '/'
 languageCode = 'en-us'
-title = 'MOND←TECH MAGAZINE'
+title = 'WEBSITE TITLE'
 
 buildFuture = true
 buildDrafts = false
@@ -49,12 +48,12 @@ enableGitInfo = true
   categories = '/:slug/'
 
 [params]
-  author = 'Mond'
-  newsletter = '' # Would be nice to have someday!
+  author = 'Author Name'
+  newsletter = '' # Link to newsletter signup
   mail = 'mailto:example@example.com'
   sanitizedMail = 'example [at] example [dot] com'
   description = 'This is a website, which means it sometimes goes offline'
-  github = 'https://github.com/HereComesTheMoon'
+  github = 'https://github.com/HereComesTheMoon/solar_v2'
 
 [menu]
   [[menu.main]]

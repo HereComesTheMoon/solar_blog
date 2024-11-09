@@ -1,4 +1,22 @@
-# Solar v.2
+# Solar v.2 Blog Edition
+
+## Notes for the fork
+
+This is first and foremost a personal project for my own blog. I've stripped out many things that don't make all that much sense for a personal blog. If necessary, reverting these changes will be easy.
+
+Disable some solar power functionality, mainly since I (for now) don't have the capacity to actually host my website that way.
+
+For local development, run `hugo server --buildDrafts` as well as `utils/build.sh` to test the dithering and page-size calculations.
+
+To run the scripts, either use `nix-shell --run "./utils/build.sh"` from the main directory (using Nix), or (going the traditional way), please use `venv` and requirements.txt instead of installing everything in a global environment.
+
+`utils/deploy.sh` can be used to deploy the blog to a cloud provider of your choice, assuming you've set everything up correctly.
+
+
+## Original Readme
+
+
+
 
 - Rebuild of Low-tech Magazine's Solar theme with Hugo
 - Builds the entire site in minutes rather than hours :)
