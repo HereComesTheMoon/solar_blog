@@ -1,6 +1,7 @@
-baseURL = '/' # Your website, eg. https://solar.lowtechmagazine.com/
+baseURL = 'https://www.herecomesthemoon.net'
 languageCode = 'en-us'
-title = 'WEBSITE TITLE'
+title = 'MOND←TECH MAGAZINE'
+relativeUrls = true
 
 buildFuture = true
 buildDrafts = false
@@ -24,6 +25,12 @@ enableGitInfo = true
     unsafe = true
   [markup.goldmark.parser.attribute]
     block = true
+  [markup.goldmark.extensions.extras.delete]
+    enable = true
+  [markup.goldmark.extensions.extras.insert]
+    enable = true
+  [markup.goldmark.extensions.extras.mark]
+    enable = true
   [markup.highlight]
     anchorLineNos = false
     codeFences = true
@@ -48,12 +55,12 @@ enableGitInfo = true
   categories = '/:slug/'
 
 [params]
-  author = 'Author Name'
-  newsletter = '' # Link to newsletter signup
-  mail = 'mailto:example@example.com'
-  sanitizedMail = 'example [at] example [dot] com'
+  author = 'Mond'
+  newsletter = '' # Would be nice to have someday!
+  mail = 'mailto:contact@herecomesthemoon.net'
+  sanitizedMail = 'contact@herecomesthemoon.net'
   description = 'This is a website, which means it sometimes goes offline'
-  github = 'https://github.com/HereComesTheMoon/solar_v2'
+  github = 'https://github.com/HereComesTheMoon'
 
 [menu]
   [[menu.main]]

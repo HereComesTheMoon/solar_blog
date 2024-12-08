@@ -16,15 +16,12 @@
 
 	{{- partial "feeds" . -}}
 	{{- partial "opengraph" . -}}
-	
-
 </head>
 <body id="{{ .Title | urlize }}">
 	<!-- {{ partial "battery" . }} -->
 	{{ partial "header" . }}
 	{{ block "main" . }}{{ end }}
 	{{ partial "footer" . }}
-
 	<script src="{{ relURL "js/script.js" }}"></script>
 </body>
 </html>

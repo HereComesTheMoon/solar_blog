@@ -1,7 +1,6 @@
 {{ define "main" }}
 
 <main class='article {{ range .Params.categories }} {{ . | urlize }} {{ end }}'>
-
 	<article>
 		<section id="content" class="article">
 			<header class="entry-header">
@@ -73,12 +72,12 @@
 		<section id="reference">
 			<div class="footnotes" role="doc-endnotes">
 			{{ index $contents 1 | safeHTML }}
+			{{- $checker := index $contents 1 | not -}}
+			{{ if $checker }} </div> {{ end }}
 		</section>
-
 
 		{{$tags := (.GetTerms "tags")}}
 		{{ if $tags }}
-		
 		<section id="related" class="article-list">
 		    <h3 class="related">Related Articles</h3>
 		    <div class="post-info gray">
@@ -95,15 +94,12 @@
 		{{ $related :=  $posts.RelatedIndices . "tags" "lang"   | first 4}}
 		{{ range $related }}
 		{{ if isset .Params ("categories")  }}
-	
 		{{ partial "article-list/default" . }}
-	
 		{{ end }}
 		{{ end }}
 		    </div>
 		</section>
 		{{ end }}
-		
 	</article>
 </main>
 {{ end }}

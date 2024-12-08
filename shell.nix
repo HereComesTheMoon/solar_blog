@@ -5,20 +5,14 @@ let
     "https://github.com/NixOS/nixpkgs/archive/42c5e250a8a9162c3e962c78a4c393c5ac369093.tar.gz")
     { };
 
-  python = pkgs.python3.override {
-    self = python;
-    packageOverrides = pyfinal: pyprev: {
-      hitherdither = pyfinal.callPackage ./hitherdither.nix { };
-    };
-  };
-
 in pkgs.mkShell {
   packages = [
-    (python.withPackages (python-pkgs:
+    (pkgs.python3.withPackages (python-pkgs:
       [
         # select Python packages here
-        python-pkgs.hitherdither
         python-pkgs.beautifulsoup4
+        python-pkgs.pillow
+        python-pkgs.numpy
       ]))
   ];
 }

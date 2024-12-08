@@ -1,7 +1,7 @@
 # clean_output
 # © 2023 Roel Roscam Abbing, released as AGPLv3
 # see https://www.gnu.org/licenses/agpl-3.0.html
-# Support your local low-tech magazine: https://solar.lowtechmagazine.com/donate.html 
+# Support your local low-tech magazine: https://solar.lowtechmagazine.com/donate.html
 
 import os
 import argparse
@@ -17,15 +17,19 @@ parser = argparse.ArgumentParser(
 )
 
 parser.add_argument(
-    '-d', '--directory', help="Set the directory to traverse", default="." 
-    )
+    "-d", "--directory", help="Set the directory to traverse", default="."
+)
 parser.add_argument(
-    '-v', '--verbose', help="Print out more detailed information about what this script is doing", action="store_true" 
-    )
+    "-v",
+    "--verbose",
+    help="Print out more detailed information about what this script is doing",
+    action="store_true",
+)
 
 args = parser.parse_args()
 
 content_dir = args.directory
+
 
 def get_printable_size(byte_size):
     """
@@ -55,6 +59,7 @@ def get_printable_size(byte_size):
     measure = MEASURE[size_index]
     return size + measure
 
+
 def calculate_dir_size(content_dir):
     size = 0
     for path, dirs, files in os.walk(os.path.abspath(content_dir)):
@@ -62,7 +67,8 @@ def calculate_dir_size(content_dir):
             fp = os.path.join(path, f)
             size += os.path.getsize(fp)
 
-    return(size)
+    return size
+
 
 exclude_dirs = set(["dithers"])
 image_ext = [".jpg", ".JPG", ".jpeg", ".png", ".gif", ".webp", ".tiff", ".bmp"]
@@ -87,10 +93,10 @@ for root, dirs, files in os.walk(os.path.abspath(content_dir), topdown=True):
         if fname.endswith(tuple(image_ext)):
             if pattern not in fname:
                 f = os.path.join(root, fname)
-                count+=1
+                count += 1
                 os.remove(f)
                 logging.debug("🗑 {}".format(fname))
-                
+
 logging.info("Deleted {} original images".format(count))
 size = calculate_dir_size(content_dir)
 logging.info("Directory is {} after cleanup".format(get_printable_size(size)))

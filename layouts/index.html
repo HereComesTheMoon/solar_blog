@@ -2,12 +2,10 @@
 <main class="home article-list" >
     <!-- Recent Articles -->
     {{ $allposts := where .Site.RegularPages "Type" "in" "posts" }}
-   
     {{ $notunlisted := where .Site.RegularPages ".Params.unlisted" "!=" "true" }}
     {{ $posts := $allposts | intersect $notunlisted }}
     {{ $pages := after 1 $posts.ByDate.Reverse }}
     {{ $recent := first 1 $posts.ByDate.Reverse }}
-
     <section id="home-listing" class="grid">
         {{ $paginator := .Paginate $pages }}
         {{ if not $paginator.HasPrev }}

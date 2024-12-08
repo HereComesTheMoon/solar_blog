@@ -6,7 +6,6 @@
             <p class="summary">
                 {{ .Summary }}
             </p>
-
             {{ if .IsTranslated }}
             <div class="metadata">
                 <div class="translations">
@@ -20,13 +19,9 @@
             <p>
                 {{ .Content }}
             </p>
-
             {{/* {{printf "%#v" .Site.Taxonomies }} */}}
-
             <h2>{{i18n "authors" | default "Authors" }}</h2>
-
             {{ range $key, $author := .Site.Taxonomies.authors.ByCount }}
-           
             <details>
                 <summary>{{ .Page.Title }} ({{ .Count }})</summary>
                 <ul class="page-list">
