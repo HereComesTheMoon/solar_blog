@@ -65,6 +65,9 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  text-size-adjust: none;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
 }
 
 html {
@@ -110,7 +113,7 @@ a {
 }
 
 code {
-  font-size: (0.9em);
+  font-family: monospace;
   color: var(--color-primary);
   background: #e5dcbc;
   display: inline-block;
@@ -756,13 +759,15 @@ figure,
 /*---------------
 FIGURES AND IMAGES
 ----------------*/
-.vertical {
-  max-width: var(--max-content-width);
-  margin: auto;
-}
+/* Removing this since it's weird??? */
+/* .vertical { */
+  /* max-width: var(--max-content-width); */
+  /* margin: auto; */
+/* } */
 img {
-  width: 100%;
+  max-width: 100%;
   display: block;
+  margin: auto;
 }
 
 figure {
@@ -775,6 +780,11 @@ figure {
   &[data-imgstate="undither"] {
     mix-blend-mode: normal;
   }
+}
+
+figcaption {
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .uncompressed {

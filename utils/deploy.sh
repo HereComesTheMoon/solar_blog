@@ -3,6 +3,8 @@
 set -e
 set -u
 
+pkill "hugo" || true
+
 # Jump to directory the shell script is placed in
 cd "$(dirname "$0")"
 # Jump to main hugo directory
@@ -30,4 +32,4 @@ cd ..
 
 # https://gohugo.io/hosting-and-deployment/hugo-deploy/
 # Deploys to standard cloud providers
-hugo deploy --confirm
+hugo deploy --confirm --force

@@ -1,7 +1,7 @@
 {{ define "main" }}
 <main id="archive-list">
     <header>
-        <h1 class="entry-title">{{i18n "archives" | default .Title}}</h1>
+        <h1 class="entry-title">{{default .Title}}</h1>
     </header>
     <div id="filters">
         <div class="filter active desc" id="date">

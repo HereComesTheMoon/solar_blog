@@ -5,7 +5,6 @@ relativeUrls = true
 
 buildFuture = true
 buildDrafts = false
-paginate = 12
 
 pluralizelisttitles = 'false'
 
@@ -28,7 +27,7 @@ enableGitInfo = true
   [markup.goldmark.extensions.extras.delete]
     enable = true
   [markup.goldmark.extensions.extras.insert]
-    enable = true
+    enable = false # uses ++, bad for C++ reasons
   [markup.goldmark.extensions.extras.mark]
     enable = true
   [markup.highlight]
@@ -56,11 +55,14 @@ enableGitInfo = true
 
 [params]
   author = 'Mond'
-  newsletter = '' # Would be nice to have someday!
+  # newsletter = 'https://buttondown.com/mond'
   mail = 'mailto:contact@herecomesthemoon.net'
   sanitizedMail = 'contact@herecomesthemoon.net'
   description = 'This is a website, which means it sometimes goes offline'
   github = 'https://github.com/HereComesTheMoon'
+
+[pagination]
+  pagerSize = 12
 
 [menu]
   [[menu.main]]
@@ -73,6 +75,11 @@ enableGitInfo = true
     name = 'Archive'
     url = '/archives/'
     weight = 2
+  [[menu.main]]
+    identifier = 'newsletter'
+    name = 'Newsletter'
+    url = 'https://buttondown.com/mond'
+    weight = 3
 
 [taxonomies]
   author = 'authors'
@@ -91,3 +98,4 @@ enableGitInfo = true
   [[related.indices]]
     name = 'lang'
     weight = 80
+

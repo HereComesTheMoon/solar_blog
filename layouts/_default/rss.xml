@@ -6,9 +6,10 @@
 {{- else -}}
 {{- $pages = $pctx.Pages -}}
 {{- end -}}
-{{- $allposts :=  where .Site.RegularPages "Type" "in" "posts" -}}
-{{- $notunlisted := where site.RegularPages ".Params.unlisted" "!=" "true" -}} 
-{{- $posts := $allposts | intersect $notunlisted -}}
+{{- $allposts := where .Site.RegularPages "Type" "in" "posts" -}}
+{{- $publishedposts := where $allposts ".Params.unlisted" "!=" true -}}
+{{- $publishedposts = where $publishedposts ".Params.draft" "!=" true -}}
+{{- $posts := $publishedposts -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
 {{- $pages = $posts | first $limit -}}
@@ -18,7 +19,7 @@
   <channel>
     <title>{{ .Site.Title }} {{.Site.Language.LanguageName}}</title>
     <link>{{ .Permalink }}</link>
-    <description>{{i18n "sitesubtitle" | default .Site.Params.description}}</description>
+    <description>{{.Site.Params.description}}</description>
     <generator>Hugo {{hugo.Version}}</generator>{{ with .Site.Language.Lang }}
     <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
     <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}

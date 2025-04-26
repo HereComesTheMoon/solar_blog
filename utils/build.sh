@@ -5,7 +5,7 @@ set -u
 
 # Jump to directory the shell script is placed in
 cd "$(dirname "$0")"
-# Jump to main solar_v2 directory
+# Jump to main hugo directory
 cd ..
 
 baseURL="/" #the URL of the website e.g. https://solar.lowtechmagazine.com/
@@ -15,7 +15,7 @@ echo "Dithering new images"
 python3 utils/dither_images.py -d ./content/ --verbose
 
 echo "Generating site"
-hugo -b $baseURL --destination $outputDir --buildDrafts
+hugo -b $baseURL --destination $outputDir --ignoreCache --cleanDestinationDir --buildDrafts
 
 echo "Calculating page sizes"
 python3 utils/calculate_size.py --directory $outputDir --baseURL $baseURL --verbose

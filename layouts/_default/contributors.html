@@ -2,25 +2,17 @@
 <main>
     <section class="article" id="authors">
         <header class="entry-header">
-            <h1 class="entry-title">{{ i18n "contributors" | default "Contributors"}}</h1>
+            <h1 class="entry-title">{{default "Contributors"}}</h1>
             <p class="summary">
                 {{ .Summary }}
             </p>
-            {{ if .IsTranslated }}
-            <div class="metadata">
-                <div class="translations">
-                    {{i18n "translations" | default "Translations" }} {{ range .Translations }}
-                    <a href="{{ .Permalink }}">{{ .Lang }}</a> {{ end }}
-                </div>
-            </div>
-            {{ end }}
         </header>
         <div class="entry-content">
             <p>
                 {{ .Content }}
             </p>
             {{/* {{printf "%#v" .Site.Taxonomies }} */}}
-            <h2>{{i18n "authors" | default "Authors" }}</h2>
+            <h2>Authors</h2>
             {{ range $key, $author := .Site.Taxonomies.authors.ByCount }}
             <details>
                 <summary>{{ .Page.Title }} ({{ .Count }})</summary>
